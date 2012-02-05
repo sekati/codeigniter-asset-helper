@@ -31,7 +31,7 @@ First setup your static asset directory; assets should be organized as follows i
 	- /CIAppRoot
 		- assets/
 			-- css/
-			-- images/
+			-- img/
 			-- js/
 			-- less/
 		- application/
@@ -46,7 +46,7 @@ Secondly, add the following lines at the bottom of your CI `application/config/c
 	$config['css_path'] = 'assets/css/';
 	$config['less_path'] = 'assets/less/';
 	$config['js_path'] = 'assets/js/';
-	$config['image_path'] = 'assets/images/';
+	$config['img_path'] = 'assets/img/';
 	
 	
 Usage
@@ -57,8 +57,8 @@ Usage
 
 A number of path URL helpers are available to access static assets:
 
-	<?=asset_url()?>images/test.jpg
-	<?=image_url()?>test.jpg
+	<?=asset_url()?>img/test.jpg
+	<?=img_url()?>test.jpg
 	<?=css_url()?>style.css
 	<?=less_url()?>style.less
 	<?=js_url()?>bootstrap.min.js
@@ -68,7 +68,7 @@ A number of path URL helpers are available to access static assets:
 
 A number of load helpers are available to easily embed assets with proper href, link or script tagging:
 
-	<?=load_image('test.jpg', 'myimageclass')?>
+	<?=load_img('test.jpg', 'myimageclass')?>
 	<?=load_css('style.css')?>
 	<?=load_less('style.less')?>	
 	<?=load_js('bootstrap.min.js')?>

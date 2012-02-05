@@ -8,11 +8,11 @@
  * @copyright	Copyright (c) 2012, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.0.1
+ * @version		v1.0.2
  * @filesource
  *
  * @usage 		$autoload['helper'] = array('asset');
- * @example		<img src="<?=asset_url();?>images/photo.jpg" />
+ * @example		<img src="<?=asset_url();?>imgs/photo.jpg" />
  * @see 		Modified & extended from http://robotslacker.com/2010/11/dynamically-combine-and-minify-your-javascript-and-css-files-with-codeigniter/
  *
  * @install		Add the following lines to your CI config.php file:
@@ -20,14 +20,14 @@
  * 					$config['css_path'] = 'assets/css/';
  * 					$config['less_path'] = 'assets/less/';
  * 					$config['js_path'] = 'assets/js/';
- * 					$config['image_path'] = 'assets/images/';
+ * 					$config['img_path'] = 'assets/img/';
  *
  * 
  * @notes		Assets should be organized as follows in the top level of 
  * 				your CodeIngiter 2.x project:
  *					- assets/
  *						-- css/
- *						-- images/
+ *						-- img/
  *						-- js/
  *						-- less/
  *					- application/
@@ -97,10 +97,10 @@ if (!function_exists('js_url')) {
  * @access  public
  * @return  string
  */
-if (!function_exists('image_url')) {  
-    function image_url() {
+if (!function_exists('img_url')) {  
+    function img_url() {
         $CI =& get_instance();  
-        return base_url() . $CI->config->item('image_path');
+        return base_url() . $CI->config->item('img_path');
     }
 }
 
@@ -153,10 +153,10 @@ if (!function_exists('load_js')) {
  * @param   string
  * @return  string
  */
-if (!function_exists('load_image')) {
-    function load_image($file, $class='') {
+if (!function_exists('load_img')) {
+    function load_img($file, $class='') {
     	$cls = (isset($class) && $class != '') ? ' class="'.$class.'" ' : '';
-        return '<img src="' . image_url() . $file . '"' . $cls .'/>'."\n";
+        return '<img src="' . img_url() . $file . '"' . $cls .'/>'."\n";
     }
 }
 
