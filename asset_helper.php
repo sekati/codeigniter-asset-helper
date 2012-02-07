@@ -8,7 +8,7 @@
  * @copyright	Copyright (c) 2012, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.0.2
+ * @version		v1.0.3
  * @filesource
  *
  * @usage 		$autoload['helper'] = array('asset');
@@ -186,9 +186,17 @@ if (!function_exists('load_jquery')) {
 if (!function_exists('load_ga')) {
     function load_ga($ua='') {
     	// Change UA-XXXXX-X to be your site's ID
-    	$out = '<script>';
-    	$out .= "window._gaq = [['_setAccount','".$ua."'],['_trackPageview'],['_trackPageLoadTime']];";
-    	$out .= "Modernizr.load({ load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js' });</script>";
+	    $out = "<!-- Google Webmaster Tools & Analytics -->\n";
+	    $out .='<script type="text/javascript">';
+		$out .='	var _gaq = _gaq || [];';
+		$out .="    _gaq.push(['_setAccount', '$ua']);";
+		$out .="    _gaq.push(['_trackPageview']);";
+		$out .='    (function() {';
+		$out .="      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;";
+		$out .="      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';";
+		$out .="      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);";
+		$out .="    })();";
+	    $out .="</script>";
         return $out;
     }
 }  
