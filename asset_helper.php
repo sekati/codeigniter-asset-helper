@@ -8,7 +8,7 @@
  * @copyright	Copyright (c) 2012, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.0.3
+ * @version		v1.0.5
  * @filesource
  *
  * @usage 		$autoload['helper'] = array('asset');
@@ -30,6 +30,8 @@
  *						-- img/
  *						-- js/
  *						-- less/
+ *						-- swf/
+ *						-- xml/
  *					- application/
  *					- system/
  */
@@ -101,6 +103,32 @@ if (!function_exists('img_url')) {
     function img_url() {
         $CI =& get_instance();  
         return base_url() . $CI->config->item('img_path');
+    }
+}
+
+/**
+ * Get SWF URL
+ *
+ * @access  public
+ * @return  string
+ */
+if (!function_exists('swf_url')) {  
+    function swf_url() {
+        $CI =& get_instance();  
+        return base_url() . $CI->config->item('swf_path');
+    }
+}
+
+/**
+ * Get XML URL
+ *
+ * @access  public
+ * @return  string
+ */
+if (!function_exists('xml_url')) {  
+    function xml_url() {
+        $CI =& get_instance();  
+        return base_url() . $CI->config->item('xml_path');
     }
 }
 

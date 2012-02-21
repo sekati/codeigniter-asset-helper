@@ -34,6 +34,8 @@ First setup your static asset directory; assets should be organized as follows i
 			-- img/
 			-- js/
 			-- less/
+			-- swf/
+			-- xml/			
 		- application/
 		- system/
 		
@@ -47,6 +49,8 @@ Secondly, add the following lines at the bottom of your CI `application/config/c
 	$config['less_path'] = 'assets/less/';
 	$config['js_path'] = 'assets/js/';
 	$config['img_path'] = 'assets/img/';
+	$config['swf_path'] = 'assets/swf/';
+	$config['xml_path'] = 'assets/xml/';	
 	
 	
 Usage
@@ -62,6 +66,8 @@ A number of path URL helpers are available to access static assets:
 	<?=css_url()?>style.css
 	<?=less_url()?>style.less
 	<?=js_url()?>bootstrap.min.js
+	<?=swf_url()?>application.swf
+	<?=xml_url()?>config.xml	
 
 	
 ### Load Embed Helpers
