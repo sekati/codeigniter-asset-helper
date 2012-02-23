@@ -2,7 +2,7 @@
 CodeIgniter Asset Helper
 ============================
 
-This is a small codeigniter helper library for working with static asset paths & embedding. _This library was modified & extended from [this blog article](http://robotslacker.com/2010/11/dynamically-combine-and-minify-your-javascript-and-css-files-with-codeigniter/)._
+A small [CodeIgniter](http://codeigniter.com) helper library for working with static asset paths & embedding. _This library was modified & extended from [this blog article](http://robotslacker.com/2010/11/dynamically-combine-and-minify-your-javascript-and-css-files-with-codeigniter/)._
 
 
 Installation
