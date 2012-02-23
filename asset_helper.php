@@ -8,7 +8,7 @@
  * @copyright	Copyright (c) 2012, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.0.5
+ * @version		v1.0.6
  * @filesource
  *
  * @usage 		$autoload['helper'] = array('asset');
@@ -45,12 +45,14 @@
  * @access  public
  * @return  string
  */
-if (!function_exists('asset_url')) {  
-    function asset_url() {
+if ( ! function_exists('asset_url'))
+{
+    function asset_url()
+    {
         //get an instance of CI so we can access our configuration
         $CI =& get_instance();  
         //return the full asset path
-        return base_url() . $CI->config->item('asset_path');
+        return base_url() . $CI->config->item('asset_path'); 
     }
 }
 
@@ -60,8 +62,10 @@ if (!function_exists('asset_url')) {
  * @access  public
  * @return  string
  */
-if (!function_exists('css_url')) {  
-    function css_url() {
+if ( ! function_exists('css_url'))
+{  
+    function css_url()
+    {
         $CI =& get_instance();  
         return base_url() . $CI->config->item('css_path');
     }
@@ -73,8 +77,10 @@ if (!function_exists('css_url')) {
  * @access  public
  * @return  string
  */
-if (!function_exists('less_url')) {  
-    function less_url() {
+if ( ! function_exists('less_url'))
+{  
+    function less_url()
+    {
         $CI =& get_instance();  
         return base_url() . $CI->config->item('less_path');
     }
@@ -86,8 +92,10 @@ if (!function_exists('less_url')) {
  * @access  public
  * @return  string
  */
-if (!function_exists('js_url')) {  
-    function js_url() {
+if ( ! function_exists('js_url'))
+{  
+    function js_url()
+    {
         $CI =& get_instance();  
         return base_url() . $CI->config->item('js_path');
     }
@@ -99,8 +107,10 @@ if (!function_exists('js_url')) {
  * @access  public
  * @return  string
  */
-if (!function_exists('img_url')) {  
-    function img_url() {
+if ( ! function_exists('img_url'))
+{  
+    function img_url()
+    {
         $CI =& get_instance();  
         return base_url() . $CI->config->item('img_path');
     }
@@ -112,8 +122,10 @@ if (!function_exists('img_url')) {
  * @access  public
  * @return  string
  */
-if (!function_exists('swf_url')) {  
-    function swf_url() {
+if ( ! function_exists('swf_url'))
+{  
+    function swf_url()
+    {
         $CI =& get_instance();  
         return base_url() . $CI->config->item('swf_path');
     }
@@ -125,8 +137,10 @@ if (!function_exists('swf_url')) {
  * @access  public
  * @return  string
  */
-if (!function_exists('xml_url')) {  
-    function xml_url() {
+if ( ! function_exists('xml_url'))
+{  
+    function xml_url()
+    {
         $CI =& get_instance();  
         return base_url() . $CI->config->item('xml_path');
     }
@@ -142,8 +156,10 @@ if (!function_exists('xml_url')) {
  * @param   string
  * @return  string
  */
-if (!function_exists('load_css')) {
-    function load_css($file, $media='all') {
+if ( ! function_exists('load_css'))
+{
+    function load_css($file, $media='all')
+    {
         return '<link rel="stylesheet" type="text/css" href="' . css_url() . $file . '" media="' . $media . '">'."\n";
     }
 }
@@ -155,8 +171,10 @@ if (!function_exists('load_css')) {
  * @param   string
  * @return  string
  */
-if (!function_exists('load_less')) {
-    function load_less($file) {
+if ( ! function_exists('load_less'))
+{
+    function load_less($file)
+    {
         return '<link rel="stylesheet/less" type="text/css" href="' . less_url() . $file . '">'."\n";
     }
 }
@@ -168,8 +186,10 @@ if (!function_exists('load_less')) {
  * @param   string
  * @return  string
  */
-if (!function_exists('load_js')) {
-    function load_js($file) {
+if ( ! function_exists('load_js'))
+{
+    function load_js($file)
+    {
         return '<script type="text/javascript" src="' . js_url() . $file . '"></script>'."\n";
     }
 }
@@ -181,8 +201,10 @@ if (!function_exists('load_js')) {
  * @param   string
  * @return  string
  */
-if (!function_exists('load_img')) {
-    function load_img($file, $class='') {
+if ( ! function_exists('load_img'))
+{
+    function load_img($file, $class='')
+    {
     	$cls = (isset($class) && $class != '') ? ' class="'.$class.'" ' : '';
         return '<img src="' . img_url() . $file . '"' . $cls .'/>'."\n";
     }
@@ -195,8 +217,10 @@ if (!function_exists('load_img')) {
  * @param   string
  * @return  string
  */
-if (!function_exists('load_jquery')) {
-    function load_jquery_cdn($version='') {
+if ( ! function_exists('load_jquery'))
+{
+    function load_jquery_cdn($version='')
+    {
     	// Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline
   		$out = '<script src="//ajax.googleapis.com/ajax/libs/jquery/'.$version.'/jquery.min.js"></script>'."\n";
   		$out .= '<script>window.jQuery || document.write(\'<script src="'.js_url().'?>jquery-'.$version.'.min.js"><\/script>\')</script>'."\n";
@@ -211,8 +235,10 @@ if (!function_exists('load_jquery')) {
  * @param   string
  * @return  string
  */
-if (!function_exists('load_ga')) {
-    function load_ga($ua='') {
+if ( ! function_exists('load_ga'))
+{
+    function load_ga($ua='')
+    {
     	// Change UA-XXXXX-X to be your site's ID
 	    $out = "<!-- Google Webmaster Tools & Analytics -->\n";
 	    $out .='<script type="text/javascript">';
