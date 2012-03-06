@@ -8,7 +8,7 @@
  * @copyright	Copyright (c) 2012, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.0.6
+ * @version		v1.0.7
  * @filesource
  *
  * @usage 		$autoload['helper'] = array('asset');
@@ -219,7 +219,7 @@ if ( ! function_exists('load_img'))
  */
 if ( ! function_exists('load_jquery'))
 {
-    function load_jquery_cdn($version='')
+    function load_jquery($version='')
     {
     	// Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline
   		$out = '<script src="//ajax.googleapis.com/ajax/libs/jquery/'.$version.'/jquery.min.js"></script>'."\n";
