@@ -8,7 +8,7 @@
  * @copyright	Copyright (c) 2012, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.0.7
+ * @version		v1.0.8
  * @filesource
  *
  * @usage 		$autoload['helper'] = array('asset');
@@ -21,6 +21,8 @@
  * 					$config['less_path'] = 'assets/less/';
  * 					$config['js_path'] = 'assets/js/';
  * 					$config['img_path'] = 'assets/img/';
+ * 					$config['swf_path'] = 'assets/swf/';
+ * 					$config['xml_path'] = 'assets/xml/';
  *
  * 
  * @notes		Assets should be organized as follows in the top level of 
