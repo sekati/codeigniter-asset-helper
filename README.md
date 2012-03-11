@@ -1,6 +1,6 @@
 
 CodeIgniter Asset Helper
-============================
+=====================================
 
 A small [CodeIgniter](http://codeigniter.com) helper library for working with static asset paths & embedding. _This library was modified & extended from [this blog article](http://robotslacker.com/2010/11/dynamically-combine-and-minify-your-javascript-and-css-files-with-codeigniter/)._
 
@@ -8,10 +8,12 @@ A small [CodeIgniter](http://codeigniter.com) helper library for working with st
 Installation
 -------------------------------------
 
-1. Copy `asset_helper.php` to your `application/helpers` folder.
-2. Autoload the helper `$autoload['helper'] = array('asset');`.
-3. Follow the configuration steps outlined below.
-4. Employ helper functions as needed.
+1. Copy `helpers/asset_helper.php` to your `application/helpers`
+2. Copy `config/asset.php` to your `application/config`
+3. Autoload the helper: `$autoload['helper'] = array('asset');`
+4. Autoload the config: `$autoload['config'] = array('asset');`
+5. Create the top level asset directory structure as outlined below.
+5. Employ helper functions as needed.
 
 
 Configuration
@@ -20,7 +22,7 @@ Configuration
 
 ### Asset Directory Structure
 
-First setup your static asset directory; assets should be organized as follows in the top level of your CodeIngiter 2.x project: 
+Your static asset directory should be organized at the top level of your CodeIgniter 2.x project as follows: 
 
 	- /CIAppRoot
 		- assets/
@@ -29,24 +31,11 @@ First setup your static asset directory; assets should be organized as follows i
 			-- js/
 			-- less/
 			-- swf/
-			-- xml/			
+			-- xml/
 		- application/
 		- system/
-		
-		
-### Application Configuration	
 
-Secondly, add the following lines at the bottom of your CI `application/config/config.php` file:
-
-	$config['asset_path'] = 'assets/';
-	$config['css_path'] = 'assets/css/';
-	$config['less_path'] = 'assets/less/';
-	$config['js_path'] = 'assets/js/';
-	$config['img_path'] = 'assets/img/';
-	$config['swf_path'] = 'assets/swf/';
-	$config['xml_path'] = 'assets/xml/';	
-	
-	
+		
 Usage
 -------------------------------------
 

@@ -8,25 +8,21 @@
  * @copyright	Copyright (c) 2012, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.0.8
+ * @version		v1.1.0
  * @filesource
  *
- * @usage 		$autoload['helper'] = array('asset');
+ * @usage 		$autoload['config'] = array('asset');
+ * 				$autoload['helper'] = array('asset');
  * @example		<img src="<?=asset_url();?>imgs/photo.jpg" />
- * @see 		Modified & extended from http://robotslacker.com/2010/11/dynamically-combine-and-minify-your-javascript-and-css-files-with-codeigniter/
  *
- * @install		Add the following lines to your CI config.php file:
- * 					$config['asset_path'] = 'assets/';
- * 					$config['css_path'] = 'assets/css/';
- * 					$config['less_path'] = 'assets/less/';
- * 					$config['js_path'] = 'assets/js/';
- * 					$config['img_path'] = 'assets/img/';
- * 					$config['swf_path'] = 'assets/swf/';
- * 					$config['xml_path'] = 'assets/xml/';
+ * @install		Copy config/asset.php to your CI application/config directory 
+ *				& helpers/asset_helper.php to your application/helpers/ directory.
+ * 				Then add both files as autoloads in application/config.php:
  *
+ *				$autoload['config'] = array('asset');
+ * 				$autoload['helper'] = array('asset');
  * 
- * @notes		Assets should be organized as follows in the top level of 
- * 				your CodeIngiter 2.x project:
+ * @notes		Organized assets in the top level of your CodeIgniter 2.x app:
  *					- assets/
  *						-- css/
  *						-- img/
@@ -35,7 +31,8 @@
  *						-- swf/
  *						-- xml/
  *					- application/
- *					- system/
+ * 						-- config/asset.php
+ * 						-- helpers/asset_helper.php
  */
 
 // ------------------------------------------------------------------------
@@ -255,9 +252,7 @@ if ( ! function_exists('load_ga'))
 	    $out .="</script>";
         return $out;
     }
-}  
- 
+}
  
 /* End of file asset_helper.php */
 /* Location: application/helpers/asset_helper.php */
-?>
