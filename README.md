@@ -10,9 +10,12 @@ Installation
 
 1. Copy `helpers/asset_helper.php` to your `application/helpers`
 2. Copy `config/asset.php` to your `application/config`
-3. Autoload the helper: `$autoload['helper'] = array('asset');`
-4. Autoload the config: `$autoload['config'] = array('asset');`
-5. Create the top level asset directory structure as outlined below.
+3. Autoload both files in `application/config/autoload.php`:	
+		
+		$autoload['helper'] = array('asset');
+		$autoload['config'] = array('asset');
+		
+4. Create the top level asset directory structure as outlined below.
 5. Employ helper functions as needed.
 
 

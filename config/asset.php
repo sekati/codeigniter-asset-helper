@@ -8,7 +8,7 @@
  * @copyright	Copyright (c) 2012, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.1.0
+ * @version		v1.1.1
  * @filesource
  *
  * @usage 		$autoload['config'] = array('asset');
@@ -17,7 +17,7 @@
  *
  * @install		Copy config/asset.php to your CI application/config directory 
  *				& helpers/asset_helper.php to your application/helpers/ directory.
- * 				Then add both files as autoloads in application/config.php:
+ * 				Then add both files as autoloads in application/autoload.php:
  *
  *				$autoload['config'] = array('asset');
  * 				$autoload['helper'] = array('asset');
