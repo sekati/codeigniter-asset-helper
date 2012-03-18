@@ -8,7 +8,7 @@
  * @copyright	Copyright (c) 2012, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.1.1
+ * @version		v1.2.0
  * @filesource
  *
  * @usage 		$autoload['config'] = array('asset');
@@ -198,14 +198,18 @@ if ( ! function_exists('load_js'))
  * Creates the <script> tag that links all requested js file
  * @access  public
  * @param   string
+ * @param 	array 	$atts Optional, additional key/value attributes to include in the IMG tag
  * @return  string
  */
 if ( ! function_exists('load_img'))
 {
-    function load_img($file, $class='')
+    function load_img($file,  $atts = array())
     {
-    	$cls = (isset($class) && $class != '') ? ' class="'.$class.'" ' : '';
-        return '<img src="' . img_url() . $file . '"' . $cls .'/>'."\n";
+		$url = '<img src="' . img_url() . $file . '"';
+		foreach ( $atts as $key => $val )
+			$url .= ' ' . $key . '="' . $val . '"';
+		$url .= " />\n";
+        return $url;
     }
 }
 

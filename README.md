@@ -60,7 +60,7 @@ A number of path URL helpers are available to access static assets:
 
 A number of load helpers are available to easily embed assets with proper href, link or script tagging:
 
-	<?=load_img('test.jpg', 'myimageclass')?>
+	<?=load_img('test.jpg', array('class'=>'imgclass', 'style'=>'border:1px solid #000'))?>
 	<?=load_css('style.css')?>
 	<?=load_less('style.less')?>	
 	<?=load_js('bootstrap.min.js')?>
