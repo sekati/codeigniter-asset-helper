@@ -34,6 +34,7 @@ Your static asset directory should be organized at the top level of your CodeIgn
 			-- js/
 			-- less/
 			-- swf/
+			-- upload/
 			-- xml/
 		- application/
 		- system/
@@ -53,7 +54,8 @@ A number of path URL helpers are available to access static assets:
 	<?=less_url()?>style.less
 	<?=js_url()?>bootstrap.min.js
 	<?=swf_url()?>application.swf
-	<?=xml_url()?>config.xml	
+	<?upload_url()?>userdoc.pdf
+	<?=xml_url()?>config.xml
 
 	
 ### Load Embed Helpers

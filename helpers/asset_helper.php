@@ -8,7 +8,7 @@
  * @copyright	Copyright (c) 2012, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.2.0
+ * @version		v1.2.1
  * @filesource
  *
  * @usage 		$autoload['config'] = array('asset');
@@ -29,6 +29,7 @@
  *						-- js/
  *						-- less/
  *						-- swf/
+ *						-- upload/
  *						-- xml/
  *					- application/
  * 						-- config/asset.php
@@ -127,6 +128,21 @@ if ( ! function_exists('swf_url'))
     {
         $CI =& get_instance();  
         return base_url() . $CI->config->item('swf_path');
+    }
+}
+
+/**
+ * Get Upload URL
+ *
+ * @access  public
+ * @return  string
+ */
+if ( ! function_exists('upload_url'))
+{  
+    function upload_url()
+    {
+        $CI =& get_instance();  
+        return base_url() . $CI->config->item('upload_path');
     }
 }
 
