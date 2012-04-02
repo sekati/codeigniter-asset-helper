@@ -8,7 +8,7 @@
  * @copyright	Copyright (c) 2012, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.2.1
+ * @version		v1.2.2
  * @filesource
  *
  * @usage 		$autoload['config'] = array('asset');
@@ -45,14 +45,15 @@
 |
 */
 
-$config['asset_path'] = 'assets/';
-$config['css_path'] = 'assets/css/';
-$config['less_path'] = 'assets/less/';
-$config['js_path'] = 'assets/js/';
-$config['img_path'] = 'assets/img/';
-$config['swf_path'] = 'assets/swf/';
-$config['upload_path'] = 'assets/upload/';
-$config['xml_path'] = 'assets/xml/';
+$config['asset_path'] 	= 'assets/';
+$config['css_path'] 	= 'assets/css/';
+$config['less_path'] 	= 'assets/less/';
+$config['js_path'] 		= 'assets/js/';
+$config['img_path'] 	= 'assets/img/';
+$config['swf_path'] 	= 'assets/swf/';
+$config['upload_path'] 	= 'assets/upload/';
+$config['xml_path'] 	= 'assets/xml/';
+
 
 /* End of file asset.php */
 /* Location: ./application/config/asset.php */

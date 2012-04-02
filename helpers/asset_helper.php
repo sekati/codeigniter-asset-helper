@@ -8,7 +8,7 @@
  * @copyright	Copyright (c) 2012, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.2.1
+ * @version		v1.2.2
  * @filesource
  *
  * @usage 		$autoload['config'] = array('asset');
@@ -162,7 +162,37 @@ if ( ! function_exists('xml_url'))
 }
 
 // ------------------------------------------------------------------------
-// LOADER HELPERS
+// HELPERS
+
+/**
+ * Get the Absolute Upload Path
+ *
+ * @access  public
+ * @return  string
+ */
+if ( ! function_exists('upload_path'))
+{  
+    function upload_path()
+    {
+        $CI =& get_instance();  
+        return FCPATH . $CI->config->item('upload_path');
+    }
+}
+
+/**
+ * Get the Relative (to app root) Upload Path
+ *
+ * @access  public
+ * @return  string
+ */
+if ( ! function_exists('upload_path_relative'))
+{  
+    function upload_path_relative()
+    {
+        $CI =& get_instance();  
+        return './' . $CI->config->item('upload_path');
+    }
+}
 
 /**
  * Load CSS
@@ -273,6 +303,7 @@ if ( ! function_exists('load_ga'))
         return $out;
     }
 }
+
  
 /* End of file asset_helper.php */
 /* Location: application/helpers/asset_helper.php */
