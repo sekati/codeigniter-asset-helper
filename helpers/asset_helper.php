@@ -8,7 +8,7 @@
  * @copyright	Copyright (c) 2012, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.2.4
+ * @version		v1.2.5
  * @filesource
  *
  * @usage 		$autoload['config'] = array('asset');
@@ -23,7 +23,7 @@
  *				$autoload['config'] = array('asset');
  * 				$autoload['helper'] = array('asset');
  *
- *				Autoload CodeIgniter's url_helper in `application/config/autoload.php`: 
+ *				Autoload CodeIgniter's url_helper in application/config/autoload.php: 
  *				$autoload['helper'] = array('url');
  * 
  * @notes		Organized assets in the top level of your CodeIgniter 2.x app:
