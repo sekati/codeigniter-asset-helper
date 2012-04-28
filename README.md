@@ -20,7 +20,7 @@ Installation
 		$autoload['config'] = array('asset');
 		
 
-2. Load the spark: `$this->load->spark('asset/1.2.3');` - or, optionally autoload the spark in `application/config/autoload.php`: `$autoload['sparks'] = array('asset/1.2.3');`.
+2. Load the spark: `$this->load->spark('asset_helper/1.2.3');` - or, optionally autoload the spark in `application/config/autoload.php`: `$autoload['sparks'] = array('asset/1.2.3');`.
 3. Employ helper functions as needed.
 
 
