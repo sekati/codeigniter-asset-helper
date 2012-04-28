@@ -1,22 +1,27 @@
 
-CodeIgniter Asset Helper
+Asset Helper Spark for CodeIgniter
 =====================================
 
-A small [CodeIgniter](http://codeigniter.com) helper library for working with static asset paths & embedding. _This library was modified & extended from [this blog article](http://robotslacker.com/2010/11/dynamically-combine-and-minify-your-javascript-and-css-files-with-codeigniter/)._
+A [CodeIgniter](http://codeigniter.com) helper [Spark](http://getsparks.org/) for working with static asset paths & embedding. _This library was modified & extended from [this blog article](http://robotslacker.com/2010/11/dynamically-combine-and-minify-your-javascript-and-css-files-with-codeigniter/)._
+
+
+Requirements
+-------------------------------------
+
+* CodeIgniter's `url_helper` must be autoloaded in `application/config/autoload.php`: $autoload['helper'] = array('url');
 
 
 Installation
 -------------------------------------
 
-1. Copy `helpers/asset_helper.php` to your `application/helpers`
-2. Copy `config/asset.php` to your `application/config`
-3. Autoload both files in `application/config/autoload.php`:	
+1. Install the spark: `php tools/spark install asset` - or, if not using Spark package management, copy `helpers/asset_helper.php` to your `application/helpers` folder & `config/asset.php` to your `application/config` folder & autoload both files in `application/config/autoload.php`:
 		
 		$autoload['helper'] = array('asset');
 		$autoload['config'] = array('asset');
 		
-4. Create the top level asset directory structure as outlined below.
-5. Employ helper functions as needed.
+
+2. Load the spark: `$this->load->spark('asset/1.2.3');` - or, optionally autoload the spark in `application/config/autoload.php`: `$autoload['sparks'] = array('asset/1.2.3');`.
+3. Employ helper functions as needed.
 
 
 Configuration
@@ -30,6 +35,7 @@ Your static asset directory should be organized at the top level of your CodeIgn
 	- /CIAppRoot
 		- assets/
 			-- css/
+			-- download/
 			-- img/
 			-- js/
 			-- less/
@@ -44,9 +50,9 @@ Usage
 -------------------------------------
 
 
-### Path URL Helpers
+### URL Helpers
 
-A number of path URL helpers are available to access static assets:
+A number of URL helpers are available to access static assets:
 
 	<?=asset_url()?>img/test.jpg
 	<?=img_url()?>test.jpg
@@ -54,26 +60,35 @@ A number of path URL helpers are available to access static assets:
 	<?=less_url()?>style.less
 	<?=js_url()?>bootstrap.min.js
 	<?=swf_url()?>application.swf
-	<?upload_url()?>userdoc.pdf
+	<?=upload_url()?>userdoc.pdf
+	<?=download_url()?>doc.pdf
 	<?=xml_url()?>config.xml
 
+
+### Path Helpers
+
+A few path helpers are available to access file system contents:
+
+	<?=upload_path()?>
+	<?=upload_path_relative()?>
 	
+		
 ### Load Embed Helpers
 
 A number of load helpers are available to easily embed assets with proper href, link or script tagging:
 
-	<?=load_img('test.jpg', array('class'=>'imgclass', 'style'=>'border:1px solid #000'))?>
-	<?=load_css('style.css')?>
-	<?=load_less('style.less')?>	
-	<?=load_js('bootstrap.min.js')?>
+	<?=img('test.jpg', array('class'=>'imgclass', 'style'=>'border:1px solid #000'))?>
+	<?=css('style.css')?>
+	<?=less('style.less')?>	
+	<?=js('bootstrap.min.js')?>
 	
 
 ### Advanced Embed Helpers
 
 A number of load helpers are available to easily embed assets with proper href, link or script tagging:
 
-	<?=load_jquery('1.7.1') // embed minified jquery version from google CDN with local failover ?>
-	<?=load_ga('UA-XXXXX-X') // embed Google Analytics. ?>	
+	<?=jquery('1.7.1') // embed minified jquery version from google CDN with local failover ?>
+	<?=google_analytics('UA-XXXXX-X') // embed Google Analytics. ?>	
 
   	
 License

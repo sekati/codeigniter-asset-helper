@@ -8,12 +8,13 @@
  * @copyright	Copyright (c) 2012, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.2.2
+ * @version		v1.2.3
  * @filesource
  *
  * @usage 		$autoload['config'] = array('asset');
  * 				$autoload['helper'] = array('asset');
  * @example		<img src="<?=asset_url();?>imgs/photo.jpg" />
+ * @example		<?=img('photo.jpg')?>
  *
  * @install		Copy config/asset.php to your CI application/config directory 
  *				& helpers/asset_helper.php to your application/helpers/ directory.
@@ -21,15 +22,19 @@
  *
  *				$autoload['config'] = array('asset');
  * 				$autoload['helper'] = array('asset');
+ *
+ *				Autoload CodeIgniter's url_helper in `application/config/autoload.php`: 
+ *				$autoload['helper'] = array('url');
  * 
  * @notes		Organized assets in the top level of your CodeIgniter 2.x app:
  *					- assets/
  *						-- css/
+ *						-- download/
  *						-- img/
  *						-- js/
  *						-- less/
  *						-- swf/
- * 						-- upload/
+ *						-- upload/
  *						-- xml/
  *					- application/
  * 						-- config/asset.php
@@ -45,15 +50,15 @@
 |
 */
 
-$config['asset_path'] 	= 'assets/';
-$config['css_path'] 	= 'assets/css/';
-$config['less_path'] 	= 'assets/less/';
-$config['js_path'] 		= 'assets/js/';
-$config['img_path'] 	= 'assets/img/';
-$config['swf_path'] 	= 'assets/swf/';
-$config['upload_path'] 	= 'assets/upload/';
-$config['xml_path'] 	= 'assets/xml/';
+$config['asset_path'] 		= 'assets/';
+$config['css_path'] 		= 'assets/css/';
+$config['download_path'] 	= 'assets/download/';
+$config['less_path'] 		= 'assets/less/';
+$config['js_path'] 			= 'assets/js/';
+$config['img_path'] 		= 'assets/img/';
+$config['swf_path'] 		= 'assets/swf/';
+$config['upload_path'] 		= 'assets/upload/';
+$config['xml_path'] 		= 'assets/xml/';
 
 
 /* End of file asset.php */
-/* Location: ./application/config/asset.php */

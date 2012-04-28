@@ -8,12 +8,13 @@
  * @copyright	Copyright (c) 2012, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.2.2
+ * @version		v1.2.3
  * @filesource
  *
  * @usage 		$autoload['config'] = array('asset');
  * 				$autoload['helper'] = array('asset');
  * @example		<img src="<?=asset_url();?>imgs/photo.jpg" />
+ * @example		<?=img('photo.jpg')?>
  *
  * @install		Copy config/asset.php to your CI application/config directory 
  *				& helpers/asset_helper.php to your application/helpers/ directory.
@@ -21,10 +22,14 @@
  *
  *				$autoload['config'] = array('asset');
  * 				$autoload['helper'] = array('asset');
+ *
+ *				Autoload CodeIgniter's url_helper in `application/config/autoload.php`: 
+ *				$autoload['helper'] = array('url');
  * 
  * @notes		Organized assets in the top level of your CodeIgniter 2.x app:
  *					- assets/
  *						-- css/
+ *						-- download/
  *						-- img/
  *						-- js/
  *						-- less/
@@ -147,6 +152,21 @@ if ( ! function_exists('upload_url'))
 }
 
 /**
+ * Get Download URL
+ *
+ * @access  public
+ * @return  string
+ */
+if ( ! function_exists('download_url'))
+{  
+    function download_url()
+    {
+        $CI =& get_instance();  
+        return base_url() . $CI->config->item('download_path');
+    }
+}
+
+/**
  * Get XML URL
  *
  * @access  public
@@ -162,7 +182,7 @@ if ( ! function_exists('xml_url'))
 }
 
 // ------------------------------------------------------------------------
-// HELPERS
+// PATH HELPERS
 
 /**
  * Get the Absolute Upload Path
@@ -195,15 +215,49 @@ if ( ! function_exists('upload_path_relative'))
 }
 
 /**
+ * Get the Absolute Download Path
+ *
+ * @access  public
+ * @return  string
+ */
+if ( ! function_exists('download_path'))
+{  
+    function download_path()
+    {
+        $CI =& get_instance();  
+        return FCPATH . $CI->config->item('download_path');
+    }
+}
+
+/**
+ * Get the Relative (to app root) Download Path
+ *
+ * @access  public
+ * @return  string
+ */
+if ( ! function_exists('download_path_relative'))
+{  
+    function download_path_relative()
+    {
+        $CI =& get_instance();  
+        return './' . $CI->config->item('download_path');
+    }
+}
+
+
+// ------------------------------------------------------------------------
+// EMBED HELPERS
+
+/**
  * Load CSS
  * Creates the <link> tag that links all requested css file
  * @access  public
  * @param   string
  * @return  string
  */
-if ( ! function_exists('load_css'))
+if ( ! function_exists('css'))
 {
-    function load_css($file, $media='all')
+    function css($file, $media='all')
     {
         return '<link rel="stylesheet" type="text/css" href="' . css_url() . $file . '" media="' . $media . '">'."\n";
     }
@@ -216,9 +270,9 @@ if ( ! function_exists('load_css'))
  * @param   string
  * @return  string
  */
-if ( ! function_exists('load_less'))
+if ( ! function_exists('less'))
 {
-    function load_less($file)
+    function less($file)
     {
         return '<link rel="stylesheet/less" type="text/css" href="' . less_url() . $file . '">'."\n";
     }
@@ -231,9 +285,9 @@ if ( ! function_exists('load_less'))
  * @param   string
  * @return  string
  */
-if ( ! function_exists('load_js'))
+if ( ! function_exists('js'))
 {
-    function load_js($file)
+    function js($file)
     {
         return '<script type="text/javascript" src="' . js_url() . $file . '"></script>'."\n";
     }
@@ -247,9 +301,9 @@ if ( ! function_exists('load_js'))
  * @param 	array 	$atts Optional, additional key/value attributes to include in the IMG tag
  * @return  string
  */
-if ( ! function_exists('load_img'))
+if ( ! function_exists('img'))
 {
-    function load_img($file,  $atts = array())
+    function img($file,  $atts = array())
     {
 		$url = '<img src="' . img_url() . $file . '"';
 		foreach ( $atts as $key => $val )
@@ -266,9 +320,9 @@ if ( ! function_exists('load_img'))
  * @param   string
  * @return  string
  */
-if ( ! function_exists('load_jquery'))
+if ( ! function_exists('jquery'))
 {
-    function load_jquery($version='')
+    function jquery($version='')
     {
     	// Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline
   		$out = '<script src="//ajax.googleapis.com/ajax/libs/jquery/'.$version.'/jquery.min.js"></script>'."\n";
@@ -284,9 +338,9 @@ if ( ! function_exists('load_jquery'))
  * @param   string
  * @return  string
  */
-if ( ! function_exists('load_ga'))
+if ( ! function_exists('google_analytics'))
 {
-    function load_ga($ua='')
+    function google_analytics($ua='')
     {
     	// Change UA-XXXXX-X to be your site's ID
 	    $out = "<!-- Google Webmaster Tools & Analytics -->\n";
@@ -306,4 +360,3 @@ if ( ! function_exists('load_ga'))
 
  
 /* End of file asset_helper.php */
-/* Location: application/helpers/asset_helper.php */
