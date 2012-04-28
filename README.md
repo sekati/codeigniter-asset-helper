@@ -14,13 +14,13 @@ Requirements
 Installation
 -------------------------------------
 
-1. Install the spark: `php tools/spark install asset` - or, if not using Spark package management, copy `helpers/asset_helper.php` to your `application/helpers` folder & `config/asset.php` to your `application/config` folder & autoload both files in `application/config/autoload.php`:
+1. Install the spark: `php tools/spark install sk-asset` or, if not using Spark package management, copy `helpers/asset_helper.php` to your `application/helpers` folder & `config/asset.php` to your `application/config` folder & autoload both files in `application/config/autoload.php`:
 		
 		$autoload['helper'] = array('asset');
 		$autoload['config'] = array('asset');
 		
 
-2. Load the spark: `$this->load->spark('asset_helper/1.2.3');` - or, optionally autoload the spark in `application/config/autoload.php`: `$autoload['sparks'] = array('asset/1.2.3');`.
+2. Load the spark: `$this->load->spark('sk-asset/1.2.4');` or, optionally autoload the spark in `application/config/autoload.php` to: `$autoload['sparks'] = array('asset/1.2.4');`.
 3. Employ helper functions as needed.
 
 

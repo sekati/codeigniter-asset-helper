@@ -8,7 +8,7 @@
  * @copyright	Copyright (c) 2012, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.2.3
+ * @version		v1.2.4
  * @filesource
  *
  * @usage 		$autoload['config'] = array('asset');
