@@ -272,7 +272,7 @@ if ( ! function_exists('load_jquery'))
     {
     	// Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline
   		$out = '<script src="//ajax.googleapis.com/ajax/libs/jquery/'.$version.'/jquery.min.js"></script>'."\n";
-  		$out .= '<script>window.jQuery || document.write(\'<script src="'.js_url().'?>jquery-'.$version.'.min.js"><\/script>\')</script>'."\n";
+  		$out .= '<script>window.jQuery || document.write(\'<script src="'.js_url().'jquery-'.$version.'.min.js"><\/script>\')</script>'."\n";
         return $out;
     }
 }
