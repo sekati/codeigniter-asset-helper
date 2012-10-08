@@ -283,13 +283,20 @@ if ( ! function_exists('less'))
  * Creates the <script> tag that links all requested js file
  * @access  public
  * @param   string
+ * @param 	array 	$atts Optional, additional key/value attributes to include in the SCRIPT tag
  * @return  string
  */
 if ( ! function_exists('js'))
 {
-    function js($file)
+    function js($file, $atts = array())
     {
-        return '<script type="text/javascript" src="' . js_url() . $file . '"></script>'."\n";
+        $element = '<script type="text/javascript" src="' . js_url() . $file . '"';
+		
+		foreach ( $atts as $key => $val )
+			$element .= ' ' . $key . '="' . $val . '"';
+		$element .= '></script>'."\n";
+		
+		return $element;
     }
 }
 
