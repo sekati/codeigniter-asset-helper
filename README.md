@@ -15,12 +15,12 @@ Installation
 -------------------------------------
 
 1. Install the spark: `php tools/spark install sk-asset` or, if not using Spark package management, copy `helpers/asset_helper.php` to your `application/helpers` folder & `config/asset.php` to your `application/config` folder & autoload both files in `application/config/autoload.php`:
-		
+
 		$autoload['helper'] = array('asset');
 		$autoload['config'] = array('asset');
-		
 
-2. Load the spark: `$this->load->spark('sk-asset/1.2.5');` or, optionally autoload the spark in `application/config/autoload.php` to: `$autoload['sparks'] = array('sk-asset/1.2.5');`.
+
+2. Load the spark: `$this->load->spark('sk-asset/1.2.6');` or, optionally autoload the spark in `application/config/autoload.php` to: `$autoload['sparks'] = array('sk-asset/1.2.6');`.
 3. Employ helper functions as needed.
 
 
@@ -30,7 +30,7 @@ Configuration
 
 ### Asset Directory Structure
 
-Your static asset directory should be organized at the top level of your CodeIgniter 2.x project as follows: 
+Your static asset directory should be organized at the top level of your CodeIgniter 2.x project as follows:
 
 	- /CIAppRoot
 		- assets/
@@ -45,7 +45,7 @@ Your static asset directory should be organized at the top level of your CodeIgn
 		- application/
 		- system/
 
-		
+
 Usage
 -------------------------------------
 
@@ -71,26 +71,26 @@ A few path helpers are available to access file system contents:
 
 	<?=upload_path()?>
 	<?=upload_path_relative()?>
-	
-		
+
+
 ### Load Embed Helpers
 
 A number of load helpers are available to easily embed assets with proper href, link or script tagging:
 
 	<?=img('test.jpg', array('class'=>'imgclass', 'style'=>'border:1px solid #000'))?>
 	<?=css('style.css')?>
-	<?=less('style.less')?>	
+	<?=less('style.less')?>
 	<?=js('bootstrap.min.js')?>
-	
+
 
 ### Advanced Embed Helpers
 
 A number of load helpers are available to easily embed assets with proper href, link or script tagging:
 
 	<?=jquery('1.7.1') // embed minified jquery version from google CDN with local failover ?>
-	<?=google_analytics('UA-XXXXX-X') // embed Google Analytics. ?>	
+	<?=google_analytics('UA-XXXXX-X') // embed Google Analytics. ?>
 
-  	
+
 License
 -------------------------------------
 
@@ -100,18 +100,18 @@ Released under the MIT License: [http://www.opensource.org/licenses/mit-license.
 
 	The MIT License
 
-	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and 
-	associated documentation files (the “Software”), to deal in the Software without restriction, 
-	including without limitation the rights to use, copy, modify, merge, publish, distribute, 
-	sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is 
+	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+	associated documentation files (the “Software”), to deal in the Software without restriction,
+	including without limitation the rights to use, copy, modify, merge, publish, distribute,
+	sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
 	furnished to do so, subject to the following conditions:
 
-	The above copyright notice and this permission notice shall be included in all copies or 
+	The above copyright notice and this permission notice shall be included in all copies or
 	substantial portions of the Software.
 
-	THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING 
-	BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND 
-	NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
-	DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
-	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.	
-	
+	THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+	BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+	NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+	DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+

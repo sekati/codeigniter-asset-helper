@@ -8,7 +8,7 @@
  * @copyright	Copyright (c) 2012, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.2.5
+ * @version		v1.2.6
  * @filesource
  *
  * @usage 		$autoload['config'] = array('asset');
@@ -16,16 +16,16 @@
  * @example		<img src="<?=asset_url();?>imgs/photo.jpg" />
  * @example		<?=img('photo.jpg')?>
  *
- * @install		Copy config/asset.php to your CI application/config directory 
+ * @install		Copy config/asset.php to your CI application/config directory
  *				& helpers/asset_helper.php to your application/helpers/ directory.
  * 				Then add both files as autoloads in application/autoload.php:
  *
  *				$autoload['config'] = array('asset');
  * 				$autoload['helper'] = array('asset');
  *
- *				Autoload CodeIgniter's url_helper in `application/config/autoload.php`: 
+ *				Autoload CodeIgniter's url_helper in `application/config/autoload.php`:
  *				$autoload['helper'] = array('url');
- * 
+ *
  * @notes		Organized assets in the top level of your CodeIgniter 2.x app:
  *					- assets/
  *						-- css/
