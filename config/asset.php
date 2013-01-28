@@ -5,10 +5,10 @@
  *
  * @package		Sekati
  * @author		Jason M Horwitz
- * @copyright	Copyright (c) 2012, Sekati LLC.
+ * @copyright	Copyright (c) 2013, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.2.6
+ * @version		v1.2.7
  * @filesource
  *
  * @usage 		$autoload['config'] = array('asset');

@@ -20,7 +20,7 @@ Installation
 		$autoload['config'] = array('asset');
 
 
-2. Load the spark: `$this->load->spark('sk-asset/1.2.6');` or, optionally autoload the spark in `application/config/autoload.php` to: `$autoload['sparks'] = array('sk-asset/1.2.6');`.
+2. Load the spark: `$this->load->spark('sk-asset/1.2.7');` or, optionally autoload the spark in `application/config/autoload.php` to: `$autoload['sparks'] = array('sk-asset/1.2.7');`.
 3. Employ helper functions as needed.
 
 
@@ -52,7 +52,7 @@ Usage
 
 ### URL Helpers
 
-A number of URL helpers are available to access static assets:
+URL helpers are available to access static assets URL paths:
 
 	<?=asset_url()?>img/test.jpg
 	<?=img_url()?>test.jpg
@@ -67,15 +67,24 @@ A number of URL helpers are available to access static assets:
 
 ### Path Helpers
 
-A few path helpers are available to access file system contents:
+Path helpers are available to access file system paths:
 
+	<?=asset_path()?>
+	<?=img_path()?>
+	<?=css_path()?>
+	<?=less_path()?>
+	<?=js_path()?>
+	<?=swf_path()?>
+	<?=xml_path()?>
+	<?=download_path()?>
+	<?=download_path_relative()?>
 	<?=upload_path()?>
 	<?=upload_path_relative()?>
 
 
 ### Load Embed Helpers
 
-A number of load helpers are available to easily embed assets with proper href, link or script tagging:
+Load helpers are available to easily embed assets with proper href, link or script tagging:
 
 	<?=img('test.jpg', array('class'=>'imgclass', 'style'=>'border:1px solid #000'))?>
 	<?=css('style.css')?>
@@ -94,7 +103,7 @@ A number of load helpers are available to easily embed assets with proper href, 
 License
 -------------------------------------
 
-Copyright © 2012 Jason M Horwitz, Sekati LLC. All Rights Reserved.
+Copyright © 2013 Jason M Horwitz, Sekati LLC. All Rights Reserved.
 
 Released under the MIT License: [http://www.opensource.org/licenses/mit-license.php](http://www.opensource.org/licenses/mit-license.php)
 

@@ -5,10 +5,10 @@
  *
  * @package		Sekati
  * @author		Jason M Horwitz
- * @copyright	Copyright (c) 2012, Sekati LLC.
+ * @copyright	Copyright (c) 2013, Sekati LLC.
  * @license		http://www.opensource.org/licenses/mit-license.php
  * @link		http://sekati.com
- * @version		v1.2.6
+ * @version		v1.2.7
  * @filesource
  *
  * @usage 		$autoload['config'] = array('asset');
@@ -42,7 +42,7 @@
  */
 
 // ------------------------------------------------------------------------
-// PATH HELPERS
+// URL HELPERS
 
 /**
  * Get asset URL
@@ -181,8 +181,119 @@ if ( ! function_exists('xml_url'))
     }
 }
 
+
 // ------------------------------------------------------------------------
 // PATH HELPERS
+
+/**
+ * Get asset Path
+ *
+ * @access  public
+ * @return  string
+ */
+if ( ! function_exists('asset_path'))
+{
+    function asset_path()
+    {
+        //get an instance of CI so we can access our configuration
+        $CI =& get_instance();
+        return FCPATH . $CI->config->item('asset_path');
+    }
+}
+
+/**
+ * Get CSS Path
+ *
+ * @access  public
+ * @return  string
+ */
+if ( ! function_exists('css_path'))
+{
+    function css_path()
+    {
+        //get an instance of CI so we can access our configuration
+        $CI =& get_instance();
+        return FCPATH . $CI->config->item('css_path');
+    }
+}
+
+/**
+ * Get LESS Path
+ *
+ * @access  public
+ * @return  string
+ */
+if ( ! function_exists('less_path'))
+{
+    function less_path()
+    {
+        //get an instance of CI so we can access our configuration
+        $CI =& get_instance();
+        return FCPATH . $CI->config->item('less_path');
+    }
+}
+
+/**
+ * Get JS Path
+ *
+ * @access  public
+ * @return  string
+ */
+if ( ! function_exists('js_path'))
+{
+    function js_path()
+    {
+        //get an instance of CI so we can access our configuration
+        $CI =& get_instance();
+        return FCPATH . $CI->config->item('js_path');
+    }
+}
+
+/**
+ * Get image Path
+ *
+ * @access  public
+ * @return  string
+ */
+if ( ! function_exists('img_path'))
+{
+    function img_path()
+    {
+        //get an instance of CI so we can access our configuration
+        $CI =& get_instance();
+        return FCPATH . $CI->config->item('img_path');
+    }
+}
+
+/**
+ * Get SWF Path
+ *
+ * @access  public
+ * @return  string
+ */
+if ( ! function_exists('swf_path'))
+{
+    function swf_path()
+    {
+        $CI =& get_instance();
+        return FCPATH . $CI->config->item('swf_path');
+    }
+}
+
+/**
+ * Get XML Path
+ *
+ * @access  public
+ * @return  string
+ */
+if ( ! function_exists('xml_path'))
+{
+    function xml_path()
+    {
+        $CI =& get_instance();
+        return FCPATH . $CI->config->item('xml_path');
+    }
+}
 
 /**
  * Get the Absolute Upload Path
@@ -364,6 +475,5 @@ if ( ! function_exists('google_analytics'))
         return $out;
     }
 }
-
 
 /* End of file asset_helper.php */
