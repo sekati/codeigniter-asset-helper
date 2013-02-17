@@ -401,7 +401,10 @@ if ( ! function_exists('js'))
 {
     function js($file, $atts = array())
     {
-        $element = '<script type="text/javascript" src="' . js_url() . $file . '"';
+        if (strpos($file, '//') === FALSE) { //External file
+            $file = js_url() . $file;
+        }
+        $element = '<script type="text/javascript" src="' . $file . '"';
 
 		foreach ( $atts as $key => $val )
 			$element .= ' ' . $key . '="' . $val . '"';
