@@ -454,7 +454,7 @@ if ( ! function_exists('jquery'))
 {
     function jquery($version='')
     {
-    	// Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline
+        // Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline
         $out = '<script src="//ajax.googleapis.com/ajax/libs/jquery/'.$version.'/jquery.min.js"></script>'."\n";
         $out .= '<script>window.jQuery || document.write(\'<script src="'.js_url().'jquery-'.$version.'.min.js"><\/script>\')</script>'."\n";
         return $out;
@@ -472,18 +472,18 @@ if ( ! function_exists('google_analytics'))
 {
     function google_analytics($ua='')
     {
-    	// Change UA-XXXXX-X to be your site's ID
-	    $out = "<!-- Google Webmaster Tools & Analytics -->\n";
-	    $out .='<script type="text/javascript">';
-            $out .='	var _gaq = _gaq || [];';
-            $out .="    _gaq.push(['_setAccount', '$ua']);";
-            $out .="    _gaq.push(['_trackPageview']);";
-            $out .='    (function() {';
-            $out .="      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;";
-            $out .="      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';";
-            $out .="      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);";
-            $out .="    })();";
-	    $out .="</script>";
+        // Change UA-XXXXX-X to be your site's ID
+        $out = "<!-- Google Webmaster Tools & Analytics -->\n";
+        $out .='<script type="text/javascript">';
+        $out .='	var _gaq = _gaq || [];';
+        $out .="    _gaq.push(['_setAccount', '$ua']);";
+        $out .="    _gaq.push(['_trackPageview']);";
+        $out .='    (function() {';
+        $out .="      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;";
+        $out .="      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';";
+        $out .="      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);";
+        $out .="    })();";
+        $out .="</script>";
         return $out;
     }
 }
