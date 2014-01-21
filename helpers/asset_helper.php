@@ -413,7 +413,7 @@ if ( ! function_exists('js'))
 
 /**
  * Load Image
- * Creates the <script> tag that links all requested js file
+ * Creates an <img> tag with src and optional attributes
  * @access  public
  * @param   string
  * @param 	array 	$atts Optional, additional key/value attributes to include in the IMG tag
