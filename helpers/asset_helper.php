@@ -374,6 +374,25 @@ if ( ! function_exists('css'))
     }
 }
 
+
+/**
+ * Load CSS
+ * Creates the <link> tag that links all requested css file added in preload
+ * @access  public
+ * @param file.css string
+ * @param media string default 'all'
+ * @return  string
+ */
+if ( ! function_exists('css_preload'))
+{
+    function css_preload($file, $media='all')
+    {
+    	$as = 'as="style"'
+    	$rel = 'rel="preload"'
+        return '<link rel="stylesheet" type="text/css" href="' . css_url() . $file . '" media="' . $media . '" ' . $as . ' ' . $rel . ' >'."\n";
+    }
+}
+
 /**
  * Load LESS
  * Creates the <link> tag that links all requested LESS file
